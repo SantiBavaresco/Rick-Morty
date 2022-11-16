@@ -13,7 +13,7 @@ function App () {
       <img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg' style={{height: 100}}/> 
       
               { /*
-                <div className={styles.divBienvenido}>
+                <div className={styles.card}>
                   <Card
                     name={Rick.name}
                     species={Rick.species}
