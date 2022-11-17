@@ -25,11 +25,11 @@ function App () {
             */}
       <hr />
         <div >
-          <ul>
+          {/* <ul> */}
           <Cards 
             characters={characters}
           />
-          </ul>
+          {/* </ul> */}
         </div>
       <hr />
         <div>

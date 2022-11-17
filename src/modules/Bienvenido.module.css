@@ -33,6 +33,7 @@
   align-items: center;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap ;
 }
 
 .listItem {
@@ -54,26 +55,28 @@
 }
 
 .listItem img {
-  width: 50%;
+  width: 50px;
   object-fit: cover;
   margin: 15px;
 }
 .card{
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: top;
-  width: 50vw;
-  height: 50vh;
+  width: 30%;
+  height: 100%;
   background-color: #c5c5c5a2;  
   margin-top: 1em;
   margin-bottom: 1em;
-  padding: 2em;
+  margin-right: 1em;
+  /* padding: 5px; */
   border-radius: 25px ;
+  line-height : 1px;
   
 }
 .card img {
-  width: 99%;
+  width: 40%;
   object-fit: cover;
   margin: 15px;
  
@@ -92,8 +95,8 @@
 .xbutton{
   background: transparent;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 50%;
+  height: 50%;
   text-align: center;
   text-decoration: none;
 
@@ -103,14 +106,5 @@
     display: block;
     margin: 0 auto;
   
-}
-
-.body{
-  background-image: url('../img/fondo.gif');
-  background-size: cover;
-  text-align: center;
-  height: 100vh;
-  padding:0;
-  margin:0;
 }
 
