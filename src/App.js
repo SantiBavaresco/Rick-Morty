@@ -8,7 +8,6 @@ import styles from './modules/Bienvenido.module.css';
 function App () {
   return (
     //<div className='App' style={{ padding: '25px' }}>
-    
     <div  className={styles.body}>
       <img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg' style={{height: 100}}/> 
       
