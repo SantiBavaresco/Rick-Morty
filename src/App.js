@@ -1,11 +1,29 @@
 import './App.css'
 //import Card from './components/Card.jsx'
 import Cards from './components/Cards.jsx'
-import SearchBar from './components/SearchBar.jsx'
-import characters from './data.js'
+import NavSeachBar from './components/Nav';
+//import SearchBar from './components/SearchBar.jsx'
+//import characters from './data.js'
+import React from "react";
 import styles from './modules/Bienvenido.module.css';
 
 function App () {
+  // const characters = [];
+  
+  const [characters, setCharacters] = React.useState([]);
+
+  const {onSearch} = () => {
+    const example = {
+      name: 'Morty Smith',
+      species: 'Human',
+      gender: 'Male',
+      image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+    };
+    setCharacters({
+      ...characters, example
+    });
+  };
+  
   return (
     //<div className='App' style={{ padding: '25px' }}>
     <div  className={styles.body}>
@@ -23,6 +41,10 @@ function App () {
                 </div>
             */}
       <hr />
+       <NavSeachBar onSearch={onSearch}/>
+
+       
+      <hr />
         <div >
           {/* <ul> */}
           <Cards 
@@ -30,12 +52,14 @@ function App () {
           />
           {/* </ul> */}
         </div>
-      <hr />
+      <hr /> 
+      {/* 
         <div>
-          <SearchBar 
+           <SearchBar 
             onSearch={(characterID) => window.alert(characterID)}
           />
         </div>
+      */}
     </div>
   )
 }
