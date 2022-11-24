@@ -5,6 +5,7 @@ import NavSeachBar from './components/Nav';
 //import SearchBar from './components/SearchBar.jsx'
 //import characters from './data.js'
 import React from "react";
+//import {useState} from "react"; //desestructurar, es lo mismo que react.useState()
 import styles from './modules/Bienvenido.module.css';
 
 function App () {
@@ -12,23 +13,25 @@ function App () {
   
   const [characters, setCharacters] = React.useState([]);
 
-  const {onSearch} = () => {
-    const example = {
-      name: 'Morty Smith',
-      species: 'Human',
-      gender: 'Male',
-      image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-    };
-    setCharacters({
-      ...characters, example
-    });
-  };
-  
+  function onSearch(character) {
+    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+       .then((response) => response.json())
+       .then((data) => {
+          if (data.name) {
+             setCharacters((oldChars) => [...oldChars, data]);
+          } else {
+             window.alert('No hay personajes con ese ID');
+          }
+       });
+  }
+
+  const onClose = (id) => {
+    setCharacters(characters.filter(char => char.id !== id));
+  }
   return (
     //<div className='App' style={{ padding: '25px' }}>
     <div  className={styles.body}>
       <img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg' style={{height: 100}}/> 
-      
               { /*
                 <div className={styles.card}>
                   <Card
@@ -41,14 +44,12 @@ function App () {
                 </div>
             */}
       <hr />
-       <NavSeachBar onSearch={onSearch}/>
-
-       
+        <NavSeachBar onSearch={onSearch}/>
       <hr />
         <div >
           {/* <ul> */}
           <Cards 
-            characters={characters}
+            characters={characters} onClose={onClose}
           />
           {/* </ul> */}
         </div>
