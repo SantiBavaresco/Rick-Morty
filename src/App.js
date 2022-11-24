@@ -4,24 +4,25 @@ import Cards from './components/Cards.jsx'
 import NavSeachBar from './components/Nav';
 //import SearchBar from './components/SearchBar.jsx'
 //import characters from './data.js'
-import React from "react";
+import React,{useState} from "react";
 import styles from './modules/Bienvenido.module.css';
 
 function App () {
   // const characters = [];
   
-  const [characters, setCharacters] = React.useState([]);
+  const [characters, setCharacters] = useState([]);
 
-  const {onSearch} = () => {
+  const onSearch = (valor) => {
     const example = {
       name: 'Morty Smith',
       species: 'Human',
       gender: 'Male',
       image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
     };
-    setCharacters({
-      ...characters, example
-    });
+    //if(valor === example.name)
+      setCharacters([
+        ...characters,example //diana genia
+      ]);
   };
   
   return (
