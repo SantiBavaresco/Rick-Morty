@@ -25,13 +25,9 @@
 }
 
 .searchBar{
-  /* font-size: 1em;
-  text-align: center; */
   display: flex;
   justify-content: flex-end;
-  /* padding: -10%;
-  margin-top: 0.1em;
-  margin-bottom: 1em; */
+  
 }
 
 .unorderedList {
