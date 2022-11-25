@@ -1,4 +1,5 @@
 import styles from '../modules/Bienvenido.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Card(props) {
    //console.log(props);
@@ -11,7 +12,9 @@ export default function Card(props) {
          </button>
          </div> 
          <img  src={props.image} alt={props.name}></img>
-         <h2 className={styles.subtitle}>{props.name}</h2>
+         <Link to={`/detail/${props.id}`}>
+            <h2 className={styles.subtitle}>{props.name}</h2>
+         </Link>
          <h2 className={styles.subtitle}>{props.species}</h2>
          <h2 className={styles.subtitle}>{props.gender}</h2>
           
