@@ -69,7 +69,8 @@ function App () {
     //   */}
     // </div>
 
-    <div>
+    // hay que aplicar los anterior a esto nuevo :D
+    <div> 
     <NavSeachBar/>
     <Routes>
       <Route path="/home" element={<Cards/>}/>
