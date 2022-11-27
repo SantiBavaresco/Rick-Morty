@@ -8,7 +8,8 @@ export default function About(){
     return( 
     <div className={styles.about}>
         <div>
-            <button onClick={()=>navigate("/home")} className={styles.button}>Volver</button>
+            <button onClick={()=>navigate("/home")} className={styles.button}
+            style={{marginTop: "2%", marginBottom: "2%"}}>Volver</button>
         </div>
       
         <span > 
