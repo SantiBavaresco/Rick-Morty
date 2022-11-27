@@ -11,20 +11,22 @@ export default function SearchBar(props) {
       // tomar ese value y guardarlo en el estado del userInput
       setUserInput(evento.target.value);
    }
-   function clearInput() { 
+   function clearInput() {  // vacia el input
       setUserInput("");
    }
-   
+   function getRandomInt(max) {
+      return Math.floor(Math.random() * max) + 1;
+    }
    
    return (
-      <div className={styles.searchBar}> 
+      <div className={styles.searchBar} style={{marginTop: "2%", marginBottom: "2%"}}> 
          <input type='search' value={userInput} onChange={handleChange} 
             //onSubmit={() => clearInput()}
             />
-         <button onClick={() => {onSearch(userInput); clearInput() }} className={styles.button}
-            
-            >
+         <button onClick={() => {onSearch(userInput); clearInput() }} className={styles.button}>
             Agregar</button> 
+         <button onClick={() => {onSearch(getRandomInt(826)); clearInput() }} className={styles.button}>
+            Random</button>
       </div>
    );
 }

@@ -7,12 +7,12 @@ export default function NavSeachBar(props) {
    return (
       <nav > 
          <Link to={"/home"}>
-          <span>Home </span>
+          <span className={styles.button} >Home </span>
         </Link>
         <Link to={"/about"}>
-          <span>About </span>
+          <span className={styles.button} >About </span>
         </Link>
-        <SearchBar onSearch={onSearch}
+        <SearchBar onSearch={onSearch} 
             //onSearch={(characterID) => window.alert(characterID)}
           />
       </nav>

@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 26px;
+  font-size: 3vw;
 
   background-size: 300% 100%;
   background-attachment: fixed;
