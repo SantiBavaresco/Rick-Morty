@@ -28,10 +28,7 @@ export default function Detail(){
          <div>
             {character ?( // se coloca este ternario, tiene que ver con las promesas, se ve mas adelante.
             <div className={styles.about} style={{height: "100%"}}>
-               <div>
-                   <button onClick={()=>navigate("/home")} className={styles.button}
-                     style={{marginTop: "2%", marginBottom: "2%"}}>Volver</button>
-               </div>
+               
                <div style={{marginTop: "2%", marginBottom: "2%"}}>
                   <div style={{float: "left", marginLeft: "40px", height: "50%" }}>
                      <h1>NOMBRE: {character.name}</h1>
@@ -45,7 +42,10 @@ export default function Detail(){
                      style={{height: "40vw",
                            
                            }} />
-                 
+                 <div>
+                   <button onClick={()=>navigate("/home")} className={styles.button}
+                     style={{marginTop: "2%", marginBottom: "2%"}}>Volver</button>
+               </div>
                </div>
             </div>
          ): ""}
