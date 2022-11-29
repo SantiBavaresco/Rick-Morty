@@ -4,6 +4,7 @@ import Cards from './components/Cards.jsx'
 import NavSeachBar from './components/Nav';
 import About from './components/About.jsx';
 import Detail from './components/Detail';
+//import Form from './components/Form';
 //import SearchBar from './components/SearchBar.jsx'
 //import characters from './data.js'
 import React from "react";
@@ -11,6 +12,7 @@ import {Routes, Route} from 'react-router-dom';
 
 //import {useState} from "react"; //desestructurar, es lo mismo que react.useState()
 import styles from './modules/Bienvenido.module.css';
+import Form from './components/Form';
 
 function App () {
   const [characters, setCharacters] = React.useState([]);
@@ -78,6 +80,7 @@ function App () {
             
           <NavSeachBar onSearch={onSearch}/>
           <Routes>
+            <Route path="/" element={<Form/>}/>
              <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
              <Route path="/about" element={<About/>}/>
             <Route path="/detail/:detailId" element={<Detail/>}/>
