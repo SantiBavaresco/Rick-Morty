@@ -4,19 +4,41 @@ import Cards from './components/Cards.jsx'
 import NavSeachBar from './components/Nav';
 import About from './components/About.jsx';
 import Detail from './components/Detail';
-//import Form from './components/Form';
+import Form from './components/Form';
 //import SearchBar from './components/SearchBar.jsx'
 //import characters from './data.js'
 import React from "react";
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
+import {useState, useEffect} from 'react';
 
 //import {useState} from "react"; //desestructurar, es lo mismo que react.useState()
 import styles from './modules/Bienvenido.module.css';
-import Form from './components/Form';
 
+//------------------------------------------------------------------------------------------------
 function App () {
-  const [characters, setCharacters] = React.useState([]);
-   
+  const [characters, setCharacters] = useState([]);
+  const location = useLocation();
+  const navigate = useNavigate();
+//------------------------------------------------------------------------------------------------
+  const userName = "santiagobavaresco@gmail.com"
+  const password = "HenryPT10";
+  const [access, setAccess] = useState(false);
+
+  useEffect(() => {
+    !access && navigate('/');
+  }, [access]);
+
+  function login(userData) { 
+    if (userData.password === password && userData.username === userName) {
+       setAccess(true);
+       navigate('/home');
+    }
+    else alert("El usuario/contraseña no es correcta.");
+  }
+  
+
+  
+//------------------------------------------------------------------------------------------------------
   function onSearch(character) {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
        .then((response) => response.json())
@@ -39,48 +61,19 @@ function App () {
   const onClose = (id) => {
     setCharacters(characters.filter(char => char.id !== id));
   }
-  
-              { /*
-                <div className={styles.card}>
-                  <Card
-                    name={Rick.name}
-                    species={Rick.species}
-                    gender={Rick.gender}
-                    image={Rick.image}
-                    onClose={() => window.alert('Emulamos que se cierra la card')}
-                  />
-                </div>
-            */}
-    //   <hr />
-    //     <NavSeachBar onSearch={onSearch}/>
-    //   <hr />
-    //     <div >
-    //       {/* <ul> */}
-          
-    //       {/* </ul> */}
-    //     </div>
-    //   <hr /> 
-    //   {/* 
-    //     <div>
-    //        <SearchBar 
-    //         onSearch={(characterID) => window.alert(characterID)}
-    //       />
-    //     </div>
-    //   */}
-    // </div>
 
-    // hay que aplicar los anterior a esto nuevo :D
+  //--------BODY------------------------------------------------------------------------------------------------------------
   return (  
         <div className='App' style={{ padding: '15px' }}>
           <div  className={styles.body}>
           <img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg' style={{height: 100}}/> 
             {/* <hr />
-              
             <hr /> */}
-            
-          <NavSeachBar onSearch={onSearch}/>
+
+          {location.pathname === "/" ? null :  <NavSeachBar onSearch={onSearch}/> }  
+
           <Routes>
-            <Route path="/" element={<Form/>}/>
+             <Route path="/" element={<Form Login={login}/>}/>
              <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
              <Route path="/about" element={<About/>}/>
             <Route path="/detail/:detailId" element={<Detail/>}/>

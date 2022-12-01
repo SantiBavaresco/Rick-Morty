@@ -3,20 +3,15 @@ import styles from '../modules/Bienvenido.module.css';
 //import styles from '/src/components/FormForm.module.css'; 
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import validation from "./validation.js";
 
-export function validate (inputs){
-    let errors={};
-    if(!inputs.username) errors.username = "Se requiere un usuario";
-    //if(!regexEmail.test(inputs.email)) errors.email = "Debe ser un correo electrónico"
-    if(!inputs.password) errors.password = "Se requiere una password valida";
-    return errors;
-  }
 
-export default function Form(){
+export default function Form(props){
   const navigate = useNavigate();
-  const [inputs, setInputs] = useState({
-    username: "",
-    password: ""
+
+  const [userData, setUserData] = useState({
+     username: "",
+     password: "" 
   });
   const [errors, setErrors] = useState({
     username: "",
@@ -25,65 +20,68 @@ export default function Form(){
 
   function handleChange(evento){
     setErrors(
-      validate({      
-        ...inputs,
+      validation({      
+        ...userData,
         [evento.target.name]:evento.target.value,
       })
     );
     // de esta manera puedo agregar propiedades al objeto sin pisar las anteriores, asi no
     // tenemos que crear un handlechange por casa input, lo mismo con los errores.
-    setInputs({
-      ...inputs,
+    setUserData({
+      ...userData,
       [evento.target.name]:evento.target.value,
     });
   }
-  function handleSubmit(evento){
-    evento.preventDefault() // evita la recarga de la pagina y asi no se pierden datos.
 
+  function handleSubmit(evento){
+    evento.preventDefault();
     if(Object.keys(errors).length > 0)// paso las keys a un arreglo, si hay valores es que tengo algun error
     {
       alert("Debes corregir los errores");
     }
     else{
-      alert("Datos completos");
-      setInputs({
+      //alert("Datos completos");
+      // console.log(props.Login(userData));
+      props.Login(userData); 
+      setUserData({
         username: "",
-        password: "",
+        password: ""
       });
       setErrors({
         username: "",
-        password: "",
+        password: ""
       });
+     // evita la recarga de la pagina y asi no se pierden datos.
     }
   }
     
     return( 
-    <div >
+    <div className={styles.about}>
         <form onSubmit={handleSubmit}>
         <span > 
-            <label htmlFor="username">Username:</label> 
+            <label htmlFor="username" className={styles.title}>Username: </label> 
             <input 
                 key="username"
                 name="username"
                 type="text" 
                 placeholder="Escriba su usuario..."
-                value={inputs.username}
+                value={userData.username}
                 onChange={handleChange}
                 className={errors.username && "warning"} />
-            <p className='danger'> {errors.username}</p>
+            <p className={styles.danger}> {errors.username && errors.username}</p>
 
-            <label htmlFor="password">Password:</label> 
+            <label htmlFor="password" className={styles.title}>Password: </label> 
             <input 
                 key="password"
                 name="password"
                 type="text" 
-                placeholder="Escriba su usuario..."
-                value={inputs.password}
+                placeholder="Escriba su contraseña..."
+                value={userData.password}
                 onChange={handleChange}
                 className={errors.password && "warning"} />
-            <p className='danger'> {errors.password}</p>
+            <p className={styles.danger}> {errors.password && errors.password}</p>
 
-            <button type="submit" >Enviar</button>
+            <button type="submit" className={styles.button}>Enviar</button>
         </span>
 
             <div>

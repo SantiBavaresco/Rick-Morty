@@ -31,7 +31,8 @@ export default function Detail(){
                
                <div style={{marginTop: "2%", marginBottom: "2%"}}>
                   <div style={{float: "left", marginLeft: "40px", height: "50%" }}>
-                     <h1>NOMBRE: {character.name}</h1>
+                     <h1>NOMBRE: </h1>
+                     <h1>{character.name}</h1>
                      <h2>STATUS: {character.status}</h2>
                      <h2>ESPECIE: {character.species}</h2>
                      <h2>GENERO: {character.gender} </h2>

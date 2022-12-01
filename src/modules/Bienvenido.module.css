@@ -36,11 +36,11 @@
   text-align: center;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  color: rgb(26, 26, 130)
+  color: rgb(27, 93, 5)
 }
 
 .subtitle {
-  font-size: 1em;
+  font-size: 1.5vw;
   text-align: center;
   padding: -10%;
   margin-top: 0.1em;
@@ -140,4 +140,15 @@
   align-self: stretch;
   
 } */
+.warning {
+  border: solid red 1px;
+  border-radius: 0.2em;
+}
+
+.danger {
+  font-size: 10px;
+  color: red;
+  margin-left: 10em;
+}
+
 
