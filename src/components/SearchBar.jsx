@@ -15,7 +15,7 @@ export default function SearchBar(props) {
       setUserInput("");
    }
    function getRandomInt(max) {
-      return Math.floor(Math.random() * max) + 1;
+       return Math.floor(Math.random() * max) + 1;
     }
    
    return (
@@ -25,6 +25,7 @@ export default function SearchBar(props) {
             />
          <button onClick={() => {onSearch(userInput); clearInput() }} className={styles.button}>
             Agregar</button> 
+            
          <button onClick={() => {onSearch(getRandomInt(826)); clearInput() }} className={styles.button}>
             Random</button>
       </div>

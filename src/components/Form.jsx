@@ -8,7 +8,7 @@ import validation from "./validation.js";
 
 export default function Form(props){
   const navigate = useNavigate();
-
+  
   const [userData, setUserData] = useState({
      username: "",
      password: "" 
@@ -17,7 +17,21 @@ export default function Form(props){
     username: "",
     password: ""
   });
-
+//----Toogle visible password--------------------------------------------------------------------------------------------
+const [passwordType, setPasswordType] = useState("password");
+    const [passwordInput, setPasswordInput] = useState("");
+    const handlePasswordChange =(evnt)=>{
+        setPasswordInput(evnt.target.value);
+    }
+    const togglePassword =()=>{
+      if(passwordType==="password")
+      {
+       setPasswordType("text")
+       return;
+      }
+      setPasswordType("password")
+    }
+//------------------------------------------------------------------------------------------------
   function handleChange(evento){
     setErrors(
       validation({      
@@ -59,6 +73,7 @@ export default function Form(props){
     <div className={styles.about}>
         <form onSubmit={handleSubmit}>
         <span > 
+          <div >
             <label htmlFor="username" className={styles.title}>Username: </label> 
             <input 
                 key="username"
@@ -69,25 +84,30 @@ export default function Form(props){
                 onChange={handleChange}
                 className={errors.username && "warning"} />
             <p className={styles.danger}> {errors.username && errors.username}</p>
+          </div>
 
+          <div >
             <label htmlFor="password" className={styles.title}>Password: </label> 
             <input 
-                key="password"
-                name="password"
-                type="text" 
-                placeholder="Escriba su contraseña..."
-                value={userData.password}
-                onChange={handleChange}
-                className={errors.password && "warning"} />
+                  key="password"
+                  name="password"
+                  type="password" 
+                  class="form-control"
+                  placeholder="Escriba su contraseña..."
+                  value={userData.password}
+                  onChange={handleChange}
+                  className={errors.password && "warning"} />
+                  <span className="input-group-btn">
+                  { passwordType==="password"? <i className="bi bi-eye-slash"></i> :<i className="bi bi-eye"></i> }
+                  {/* <button type="button" className="btn btn-outline-primary" onClick={togglePassword}>
+                     { passwordType==="password"? <i className="bi bi-eye-slash"></i> :<i className="bi bi-eye"></i> }
+                     </button> */}
+                  </span>
             <p className={styles.danger}> {errors.password && errors.password}</p>
-
-            <button type="submit" className={styles.button}>Enviar</button>
+          </div>         
+            <button type="submit" className={styles.button}>Enviar</button>    
+            <p>admin@admin.com - admin1234</p>   
         </span>
-
-            <div>
-                {/* <button onClick={()=>navigate("/home")} className={styles.button}
-                style={{marginTop: "2%", marginBottom: "2%"}}>Volver</button> */}
-            </div>
         </form>
     </div>
     );

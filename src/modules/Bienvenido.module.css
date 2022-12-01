@@ -141,14 +141,15 @@
   
 } */
 .warning {
+  font-size: 2em;
   border: solid red 1px;
   border-radius: 0.2em;
 }
 
 .danger {
-  font-size: 10px;
+  font-size: 2em;
   color: red;
-  margin-left: 10em;
+  margin-left: 2em;
 }
 
 

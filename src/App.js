@@ -5,6 +5,7 @@ import NavSeachBar from './components/Nav';
 import About from './components/About.jsx';
 import Detail from './components/Detail';
 import Form from './components/Form';
+import Error404 from './components/Error404';
 //import SearchBar from './components/SearchBar.jsx'
 //import characters from './data.js'
 import React from "react";
@@ -20,8 +21,8 @@ function App () {
   const location = useLocation();
   const navigate = useNavigate();
 //------------------------------------------------------------------------------------------------
-  const userName = "santiagobavaresco@gmail.com"
-  const password = "HenryPT10";
+  const userName = "admin@admin.com"
+  const password = "admin1234";
   const [access, setAccess] = useState(false);
 
   useEffect(() => {
@@ -40,6 +41,7 @@ function App () {
   
 //------------------------------------------------------------------------------------------------------
   function onSearch(character) {
+    
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
        .then((response) => response.json())
        .then((data) => {
@@ -61,7 +63,7 @@ function App () {
   const onClose = (id) => {
     setCharacters(characters.filter(char => char.id !== id));
   }
-
+  const locaciones = ["/","/home","/about","/detail/:detailId"];
   //--------BODY------------------------------------------------------------------------------------------------------------
   return (  
         <div className='App' style={{ padding: '15px' }}>
@@ -70,13 +72,14 @@ function App () {
             {/* <hr />
             <hr /> */}
 
-          {location.pathname === "/" ? null :  <NavSeachBar onSearch={onSearch}/> }  
-
+         ] {location.pathname === "/" ? null :  <NavSeachBar onSearch={onSearch}/> }  
+          {/* <NavSeachBar onSearch={onSearch}/> */}
           <Routes>
              <Route path="/" element={<Form Login={login}/>}/>
              <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
              <Route path="/about" element={<About/>}/>
-            <Route path="/detail/:detailId" element={<Detail/>}/>
+             <Route path="/detail/:detailId" element={<Detail/>}/>
+             <Route path=":404" element={<Error404/>}/>
           </Routes> 
         </div>
         </div>
