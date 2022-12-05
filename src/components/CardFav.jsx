@@ -7,7 +7,7 @@ import { addFavorite, deleteFavorite } from "../redux/actions.js";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
-export function Card(props) {
+export function CardFav(props) {
    //console.log(props);
    const [isFav, setIsFav] = useState(false);
 
@@ -31,7 +31,7 @@ export function Card(props) {
    }
    return (
       <div className={styles.card}>
-         <div style={{display: "flex", justifyContent: "space-between", margin: "4%", height: "20%"}}>
+         <div style={{display: "flex", justifyContent: "center", margin: "4%", height: "20%"}}>
 
             {/* ------ BOTON MORTY CORAZON ------ */}
             {isFav ? (<button onClick={handleFavorite} className={styles.xbutton}>
@@ -43,9 +43,9 @@ export function Card(props) {
                </button>)}
 
             {/* ------ BOTON PEPINILLO RICK ------ */}
-            <button className={styles.xbutton} onClick={props.onClick}  >  {/* onClick={ () => props.onClose(props.id)} */}
+            {/* <button className={styles.xbutton} onClick={props.onClick}  >  onClick={ () => props.onClose(props.id)}
                <img  src={PepinilloRick} alt={props.name} />
-            </button>
+            </button> */}
             
          </div> 
          {/* ------ IMG CHARACTER ------ */}
@@ -53,14 +53,13 @@ export function Card(props) {
          {/* <h6>{props.id}</h6> */}
          
          {/* ------ NOM CHARACTER ------ */}
-         <Link to={`/detail/${props.id}`} 
-            style={{ color: 'inherit', textDecoration: 'inherit'}} >
+         {/* <Link to={`/detail/${props.id}`}> */}
+         <Link to={`/detail/${props.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}} >
             <button className={styles.subtitle} 
-               style={{ backgroundColor: "green", 
-               borderRadius: "25px", 
-               color: "white"}}>
-            {props.name}</button>
+               style={{ backgroundColor: "green", borderRadius: "25px", color: "white"}}>
+               {props.name}</button>
          </Link>
+         {/* </Link> */}
          {/* <h2 className={styles.subtitle}>{props.species}</h2>
          <h2 className={styles.subtitle}>{props.gender}</h2> */}
           
@@ -81,4 +80,4 @@ export function mapStateToProps(state){
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card)
+export default connect(mapStateToProps, mapDispatchToProps)(CardFav)

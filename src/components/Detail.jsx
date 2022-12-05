@@ -28,21 +28,24 @@ export default function Detail(){
          <div>
             {character ?( // se coloca este ternario, tiene que ver con las promesas, se ve mas adelante.
             <div className={styles.about} style={{height: "100%"}}>
-               
+            {/* ----- INFORMACION DETAIL ----- */}
                <div style={{marginTop: "2%", marginBottom: "2%"}}>
+                  {/* ----- TEXTO DETAIL ----- */}
                   <div style={{float: "left", marginLeft: "40px", height: "50%" }}>
-                     <h1>NOMBRE: </h1>
+                     <h3>NOMBRE: </h3>
                      <h1>{character.name}</h1>
-                     <h2>STATUS: {character.status}</h2>
-                     <h2>ESPECIE: {character.species}</h2>
-                     <h2>GENERO: {character.gender} </h2>
-                     <h2>ORIGEN: {character.origin?.name}</h2>
+                     <h3>STATUS: {character.status}</h3>
+                     <h3>ESPECIE: {character.species}</h3>
+                     <h3>GENERO: {character.gender} </h3>
+                     <h3>ORIGEN: </h3>
+                     <h3>{character.origin?.name}</h3>
                   </div>
-                  
+                  {/* ----- IMG DETAIL ----- */}
                      <img src={character.image} alt={character.name} 
                      style={{height: "40vw",
                            
                            }} />
+                  {/* ----- BUTTON VOLVER ----- */}
                  <div>
                    <button onClick={()=>navigate("/home")} className={styles.button}
                      style={{marginTop: "2%", marginBottom: "2%"}}>Volver</button>

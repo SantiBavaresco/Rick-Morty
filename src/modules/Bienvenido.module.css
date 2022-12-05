@@ -1,17 +1,20 @@
 .divBienvenido {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
+  
+  justify-content: space-evenly;
   width: 100vw;
-  height: 100vh;
+  flex-wrap: wrap ;
+  /* height: 100vh; */
   /* background-color: #c5c5c5a2; */
 }
+
 .about{
   /* display: flex; */
-  font-size: 1.2vw;
-  flex-direction: column;
-  /* align-items: center; */
+  font-size: 2vw;
+  /* flex-direction: column; */
+  align-items: center;
   /* justify-content: center; */
   /* width: 100vw;
   height: 100vh; */
@@ -32,7 +35,7 @@
 
 
 .title {
-  font-size: 3em;
+  font-size: 4vh;
   text-align: center;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -40,10 +43,10 @@
 }
 
 .subtitle {
-  font-size: 1.5vw;
+  font-size: 200%;
   text-align: center;
   padding: -10%;
-  margin-top: 0.1em;
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
@@ -59,7 +62,7 @@
   margin-bottom: 1em;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-self: stretch;
   justify-content: center;
   flex-wrap: wrap ;
   
@@ -93,7 +96,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: top;
-  width: 30%;
+  width: 21vw;
   height: 100%;
   background-color: #c5c5c5a2;  
   margin-top: 1em;
@@ -121,13 +124,13 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.5vw;
+  font-size: 2.0vw;
 }
 .xbutton{
   background: transparent;
   
   border: none;
-  width: 25%;
+  width: 7vh;
   height: 25%;
   text-align: center;
   text-decoration: none;
@@ -140,10 +143,23 @@
     margin: 0 auto;
     align-items:left;
   align-self: stretch;
-  border-radius: 10px ;
+  /* border-radius: 10px ; */
   background: transparent;
   
 }
+.imagenes{
+  /* background-image: "https://i.pinimg.com/originals/78/a9/6d/78a96d96ffa60a4477d0f17e9bd55a36.png"; */
+   display: block;
+   margin: 0 auto;
+   width: 100%;
+   height: 100%;
+   align-items:left;
+   align-self: stretch;
+
+   border-radius: 10px ;
+   background: transparent;
+   
+ }
 .warning {
   font-size: 2em;
   border: solid red 1px;

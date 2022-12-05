@@ -1,4 +1,5 @@
-import Card from './Card';
+import CardFav from './CardFav';
+import PepinilloRick from "../img/x.png";
 import styles from '../modules/Bienvenido.module.css';
 import {connect} from "react-redux";
 
@@ -8,10 +9,19 @@ function Favorites({myFavorites}){
         <ul className={styles.unorderedList}>
             {/* <h1>Favorites</h1> */}
             {myFavorites.map((char) => (
-                <div className={styles.card}>
-                    <h2 lassName={styles.subtitle}>{char.name}</h2>
-                    <img  src={char.image} alt={char.name} style={{marginTop: "2%", marginBottom: "2%"}}></img>
-                </div>
+                <CardFav
+                    key={char.id}
+                    id={char.id}
+                    name={char.name}
+                    species={char.species}
+                    gender={char.gender}
+                    image={char.image}
+                    // onClick={()=> onClose(char.id) }
+                /> 
+                // <div className={styles.card}>
+                //     <h2 lassName={styles.subtitle}>{char.name}</h2>
+                //     <img  src={char.image} alt={char.name} style={{marginTop: "2%", marginBottom: "2%"}}></img>
+                // </div>
                 )       
             )}
         </ul>

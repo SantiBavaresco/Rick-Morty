@@ -69,7 +69,7 @@ function App () {
   return (  
         <div className='App' style={{ padding: '15px' }}>
           <div  className={styles.body}>
-          <img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg' style={{height: 100}}/> 
+           
             {/* <hr />
             <hr /> */}
 
@@ -79,7 +79,7 @@ function App () {
              <Route path="/" element={<Form Login={login}/>}/>
              <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
              <Route path="/about" element={<About/>}/>
-             <Route path="/favorites" element={<Favorites/>}/>
+             <Route path="/favorites" element={<Favorites onClose={onClose}/>}/>
              <Route path="/detail/:detailId" element={<Detail/>}/>
              <Route path=":404" element={<Error404/>}/>
           </Routes> 
