@@ -125,6 +125,7 @@
 }
 .xbutton{
   background: transparent;
+  
   border: none;
   width: 25%;
   height: 25%;
@@ -133,14 +134,16 @@
   
 
 }
-/* .xbutton img{
-  background-image: "https://i.pinimg.com/originals/78/a9/6d/78a96d96ffa60a4477d0f17e9bd55a36.png";
+.xbutton img{
+ /* background-image: "https://i.pinimg.com/originals/78/a9/6d/78a96d96ffa60a4477d0f17e9bd55a36.png"; */
     display: block;
     margin: 0 auto;
     align-items:left;
   align-self: stretch;
+  border-radius: 10px ;
+  background: transparent;
   
-} */
+}
 .warning {
   font-size: 2em;
   border: solid red 1px;

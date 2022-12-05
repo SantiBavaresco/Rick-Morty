@@ -29,8 +29,11 @@ export function Card(props) {
    return (
       <div className={styles.card}>
          <div>
-            {isFav ? (<button onClick={handleFavorite}>❤️</button>) : (
-               <button onClick={handleFavorite}>🤍</button>)}
+            {isFav ? (<button onClick={handleFavorite} className={styles.xbutton}><img src="https://i.ibb.co/X77shXs/1.jpg" alt="1" border="0"/>
+               </button>) : (
+               <button onClick={handleFavorite} className={styles.xbutton}>
+                <img src="https://i.ibb.co/80dvVCJ/2.jpg" alt="2" border="0"/>
+               </button>)}
             <button className={styles.xbutton} onClick={props.onClick}  >  {/* onClick={ () => props.onClose(props.id)} */}
                <img  src="https://i.pinimg.com/originals/78/a9/6d/78a96d96ffa60a4477d0f17e9bd55a36.png" alt={props.name} />
             </button>
