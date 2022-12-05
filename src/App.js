@@ -6,6 +6,7 @@ import About from './components/About.jsx';
 import Detail from './components/Detail';
 import Form from './components/Form';
 import Error404 from './components/Error404';
+import Favorites from './components/Favorites';
 //import SearchBar from './components/SearchBar.jsx'
 //import characters from './data.js'
 import React from "react";
@@ -25,9 +26,9 @@ function App () {
   const password = "admin1234";
   const [access, setAccess] = useState(false);
 
-  useEffect(() => {
-    !access && navigate('/');
-  }, [access]);
+  // useEffect(() => {
+  //   !access && navigate('/');
+  // }, [access]);
 
   function login(userData) { 
     if (userData.password === password && userData.username === userName) {
@@ -72,12 +73,13 @@ function App () {
             {/* <hr />
             <hr /> */}
 
-         ] {location.pathname === "/" ? null :  <NavSeachBar onSearch={onSearch}/> }  
+          {location.pathname === "/" ? null :  <NavSeachBar onSearch={onSearch}/> }  
           {/* <NavSeachBar onSearch={onSearch}/> */}
           <Routes>
              <Route path="/" element={<Form Login={login}/>}/>
              <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
              <Route path="/about" element={<About/>}/>
+             <Route path="/favorites" element={<Favorites/>}/>
              <Route path="/detail/:detailId" element={<Detail/>}/>
              <Route path=":404" element={<Error404/>}/>
           </Routes> 

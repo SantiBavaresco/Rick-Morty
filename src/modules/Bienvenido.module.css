@@ -103,13 +103,14 @@
   /* padding: 5px; */
   border-radius: 25px ;
   line-height : 1px;
-  
+  font-size: 0.5em;
 }
 .card img {
   width: 90%;
   /* object-fit: cover; */
   /* margin: 15px; */
   border-radius: 25px ;
+  
    
 }
 .button {

@@ -1,0 +1,7 @@
+const ADD_FAVORITE = 'ADD_FAVORITE';
+const DELETE_FAVORITE = 'DELETE_FAVORITE';
+
+module.exports = {
+  ADD_FAVORITE,
+  DELETE_FAVORITE
+}

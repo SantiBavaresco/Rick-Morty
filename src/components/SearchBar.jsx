@@ -19,7 +19,7 @@ export default function SearchBar(props) {
     }
    
    return (
-      <div className={styles.searchBar} style={{marginTop: "2%", marginBottom: "2%"}}> 
+      <span className={styles.searchBar} style={{marginTop: "2%", marginBottom: "2%"}}> 
          <input type='search' value={userInput} onChange={handleChange} 
             //onSubmit={() => clearInput()}
             />
@@ -28,6 +28,6 @@ export default function SearchBar(props) {
             
          <button onClick={() => {onSearch(getRandomInt(826)); clearInput() }} className={styles.button}>
             Random</button>
-      </div>
+      </span>
    );
 }
