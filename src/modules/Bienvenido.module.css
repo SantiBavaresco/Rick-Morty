@@ -117,7 +117,7 @@
   width: 90%;
   /* object-fit: cover; */
   /* margin: 15px; */
-  border-radius: 25px ;
+  border-radius: 15px ;
   border:4px;
   border-color: black; 
    
@@ -130,7 +130,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 2.0vw;
+  font-size: 1.0vw;
 }
 .xbutton{
   background: transparent;

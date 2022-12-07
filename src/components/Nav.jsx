@@ -12,7 +12,7 @@ export default function NavSeachBar(props) {
          <span style={{display:"flex", justifyContent: "right", alignItems: "center"}}>
 
             <Link to={"/home"}>
-               <img src={Titulo} style={{height: 100}}/>
+               <img src={Titulo} style={{height: 80}}/>
                {/* <button className={styles.button} >Home </button> */}
             </Link>
         

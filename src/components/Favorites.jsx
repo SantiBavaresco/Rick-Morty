@@ -7,8 +7,11 @@ function Favorites({myFavorites}){
 
     return(
         <ul className={styles.unorderedList}>
-            {/* <h1>Favorites</h1> */}
-            {myFavorites.map((char) => (
+            {console.log(myFavorites)}
+            
+        
+            { 
+            myFavorites.length>0 ? myFavorites.map((char) => (
                 <CardFav
                     key={char.id}
                     id={char.id}
@@ -23,7 +26,10 @@ function Favorites({myFavorites}){
                 //     <img  src={char.image} alt={char.name} style={{marginTop: "2%", marginBottom: "2%"}}></img>
                 // </div>
                 )       
-            )}
+            ) : 
+            <span className={styles.about}>No hay favoritos que mostrar</span>
+        
+        }
         </ul>
     )
 }

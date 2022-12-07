@@ -7,7 +7,7 @@ export default function About(){
     <div className={styles.about}>
         <span > 
             <h1>Hola soy Santi</h1>
-            <p>Esta es mi historia..</p>
+            <p>Este es mi about..</p>
         </span>
 
         <div>

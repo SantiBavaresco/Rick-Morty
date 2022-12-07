@@ -2,7 +2,7 @@ import styles from '../modules/Bienvenido.module.css';
 import MortyRojo from "../img/Morty-rojo.png";
 import MortyBlanco from "../img/Morty-blanco.png";
 import PepinilloRick from "../img/x.png";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { addFavorite, deleteFavorite } from "../redux/actions.js";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
@@ -33,7 +33,7 @@ export function Card(props) {
       <div className={styles.card}>
          <div style={{display: "flex", justifyContent: "space-between", margin: "4%", height: "20%"}}
          >
-
+         
             {/* ------ BOTON MORTY CORAZON ------ */}
             {isFav ? (<button onClick={handleFavorite} className={styles.hvr_hang}>
                <img src={MortyBlanco} alt="1" border="0" style={{height: "30%"}}/>
@@ -47,21 +47,21 @@ export function Card(props) {
             <button className={styles.xbutton} onClick={props.onClick}  >  {/* onClick={ () => props.onClose(props.id)} */}
                <img  className={styles.hvr_buzz} src={PepinilloRick} alt={props.name} />
             </button>
-            
+          
          </div> 
          {/* ------ IMG CHARACTER ------ */}
-         <img  src={props.image} alt={props.name}></img>
+         <img  src={props.image} alt={props.name}></img> 
          {/* <h6>{props.id}</h6> */}
          
          {/* ------ NOMBRE CHARACTER ------ */}
-         <Link to={`/detail/${props.id}`} 
+         <NavLink to={`/detail/${props.id}`} 
             style={{ color: 'inherit', textDecoration: 'inherit'}} >
             <button className={styles.subtitle} 
                style={{ backgroundColor: "green", 
                borderRadius: "25px", 
                color: "white"}}>
             {props.name}</button>
-         </Link>
+         </NavLink>
          {/* <h2 className={styles.subtitle}>{props.species}</h2>
          <h2 className={styles.subtitle}>{props.gender}</h2> */}
           
