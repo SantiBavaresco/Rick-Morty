@@ -31,20 +31,21 @@ export function Card(props) {
    }
    return (
       <div className={styles.card}>
-         <div style={{display: "flex", justifyContent: "space-between", margin: "4%", height: "20%"}}>
+         <div style={{display: "flex", justifyContent: "space-between", margin: "4%", height: "20%"}}
+         >
 
             {/* ------ BOTON MORTY CORAZON ------ */}
-            {isFav ? (<button onClick={handleFavorite} className={styles.xbutton}>
+            {isFav ? (<button onClick={handleFavorite} className={styles.hvr_hang}>
                <img src={MortyBlanco} alt="1" border="0" style={{height: "30%"}}/>
                </button>) 
                : (
-               <button onClick={handleFavorite} className={styles.xbutton}>
+               <button onClick={handleFavorite} className={styles.hvr_hang}>
                 <img src={MortyRojo} alt="2" border="0" style={{height: "150%"}}/>
                </button>)}
 
             {/* ------ BOTON PEPINILLO RICK ------ */}
             <button className={styles.xbutton} onClick={props.onClick}  >  {/* onClick={ () => props.onClose(props.id)} */}
-               <img  src={PepinilloRick} alt={props.name} />
+               <img  className={styles.hvr_buzz} src={PepinilloRick} alt={props.name} />
             </button>
             
          </div> 
@@ -52,7 +53,7 @@ export function Card(props) {
          <img  src={props.image} alt={props.name}></img>
          {/* <h6>{props.id}</h6> */}
          
-         {/* ------ NOM CHARACTER ------ */}
+         {/* ------ NOMBRE CHARACTER ------ */}
          <Link to={`/detail/${props.id}`} 
             style={{ color: 'inherit', textDecoration: 'inherit'}} >
             <button className={styles.subtitle} 

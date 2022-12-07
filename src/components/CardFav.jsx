@@ -35,11 +35,11 @@ export function CardFav(props) {
 
             {/* ------ BOTON MORTY CORAZON ------ */}
             {isFav ? (<button onClick={handleFavorite} className={styles.xbutton}>
-               <img src={MortyBlanco} alt="1" border="0" style={{height: "30%"}}/>
+               <img className={styles.hvr_buzz} src={MortyBlanco} alt="1" border="0" style={{height: "30%"}}/>
                </button>) 
                : (
                <button onClick={handleFavorite} className={styles.xbutton}>
-                <img src={MortyRojo} alt="2" border="0" style={{height: "150%"}}/>
+                <img className={styles.hvr_buzz} src={MortyRojo} alt="2" border="0" style={{height: "150%"}}/>
                </button>)}
 
             {/* ------ BOTON PEPINILLO RICK ------ */}
