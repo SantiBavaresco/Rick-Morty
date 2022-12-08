@@ -6,6 +6,9 @@ export default function Cards(props) {
    const { characters, onClose } = props;
   // console.log(characters);
    return (
+      <div>
+         {/* <div className={styles.lds_ring}><div></div><div></div><div></div><div></div></div> */}
+      
    <ul className={styles.unorderedList}>
       {
          
@@ -21,5 +24,6 @@ export default function Cards(props) {
          /> )
       }
    </ul>
+   </div>
    );
 }

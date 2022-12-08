@@ -70,7 +70,7 @@ const [passwordType, setPasswordType] = useState("password");
   }
     
     return( 
-    <div className={styles.about}>
+    <div className={styles.about} style={{width: "50%", margin:"auto"}}>
         <form onSubmit={handleSubmit}>
         <span > 
           <div >
@@ -106,7 +106,7 @@ const [passwordType, setPasswordType] = useState("password");
             <p className={styles.danger}> {errors.password && errors.password}</p>
           </div>         
             <button type="submit" className={styles.button}>Enviar</button>    
-            <p>admin@admin.com - admin1234</p>   
+            <p className={styles.p}> admin@admin.com - admin1234</p>   
         </span>
         </form>
     </div>

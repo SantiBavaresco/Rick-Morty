@@ -23,26 +23,30 @@ export default function Detail(){
 
         return setCharacter({}); // esta linea resetea el estado a vacio
      }, [detailId]);
-
+// style={{height: "30%"}}
      return(
-         <div>
+         <div className={styles.about} style={{ width: "70%",height: "90%", margin:"auto"}}>
             {character ?( // se coloca este ternario, tiene que ver con las promesas, se ve mas adelante.
-            <div className={styles.about} style={{height: "100%"}}>
+            <div  >
             {/* ----- INFORMACION DETAIL ----- */}
-               <div style={{marginTop: "2%", marginBottom: "2%"}}>
+               <div style={{
+                  width: "85%",height: "54vh", margin:"auto",
+                  marginTop: "2%", marginBottom: "3%", marginRight: "5%", marginLeft: "9%"}}>
                   {/* ----- TEXTO DETAIL ----- */}
-                  <div style={{float: "left", marginLeft: "40px", height: "50%" }}>
+                  <div style={{float: "left", marginLeft: "40px"}}>
+                     <p className={styles.subtitle}>
                      <h3>NOMBRE: </h3>
-                     <h1>{character.name}</h1>
+                     <h3>{character.name}</h3>
                      <h3>STATUS: {character.status}</h3>
                      <h3>ESPECIE: {character.species}</h3>
                      <h3>GENERO: {character.gender} </h3>
                      <h3>ORIGEN: </h3>
                      <h3>{character.origin?.name}</h3>
+                     </p>
                   </div>
                   {/* ----- IMG DETAIL ----- */}
                      <img src={character.image} alt={character.name} 
-                     style={{height: "40vw",
+                     style={{height: "25vw", marginRight: "5%", marginTop: "3%"
                            
                            }} />
                   {/* ----- BUTTON VOLVER ----- */}

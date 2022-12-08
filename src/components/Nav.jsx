@@ -12,7 +12,7 @@ export default function NavSeachBar(props) {
          <span style={{display:"flex", justifyContent: "right", alignItems: "center"}}>
 
             <Link to={"/home"}>
-               <img src={Titulo} style={{height: 80}}/>
+               <img src={Titulo} style={{height: 80, justifyContent: "center  ", alignItems: "center"}}/>
                {/* <button className={styles.button} >Home </button> */}
             </Link>
         
@@ -25,11 +25,15 @@ export default function NavSeachBar(props) {
             <Link to={"/about"}>
                <button className={styles.button} >About </button>
             </Link>
+
+            <Link to={"/"}>
+               <button className={styles.button} >Logout </button>
+            </Link>
             
          </span>
-         <span className={styles.nave} >
+         
             <SearchBar onSearch={onSearch} /> 
-         </span>
+         
       </div>
       
    )

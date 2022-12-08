@@ -26,9 +26,9 @@ function App () {
   const password = "admin1234";
   const [access, setAccess] = useState(false);
 
-  // useEffect(() => {
-  //   !access && navigate('/');
-  // }, [access]);
+  useEffect(() => {
+    !access && navigate('/');
+  }, [access]);
 
   function login(userData) { 
     if (userData.password === password && userData.username === userName) {
