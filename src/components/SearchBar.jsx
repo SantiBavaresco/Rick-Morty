@@ -19,7 +19,7 @@ export default function SearchBar(props) {
     }
    
    return (
-      <span className={styles.searchBar} style={{marginTop: "2%", marginBottom: "2%"}}> 
+      <span className={styles.searchBar} style={{}}> 
          <input type='search' value={userInput} onChange={handleChange} 
             //onSubmit={() => clearInput()}
             />
