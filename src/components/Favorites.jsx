@@ -20,7 +20,7 @@ function Favorites({myFavorites}){
         // tomar ese value y guardarlo en el estado del userInput
         disGender(filterCards(evento.target.value))
        // setUserInput(evento.target.value);
-    } 
+    }  
 
     return(
         <div style={{width: "100%", margin:"auto"}}>

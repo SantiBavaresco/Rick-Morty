@@ -30,7 +30,7 @@ export default function Detail(){
             <div  >
             {/* ----- INFORMACION DETAIL ----- */}
                <div style={{
-                  width: "85%",height: "54vh", margin:"auto",
+                  width: "85%",height: "58vh", margin:"auto",
                   marginTop: "2%", marginBottom: "3%", marginRight: "5%", marginLeft: "9%"}}>
                   {/* ----- TEXTO DETAIL ----- */}
                   <div style={{float: "left", marginLeft: "40px"}}>
