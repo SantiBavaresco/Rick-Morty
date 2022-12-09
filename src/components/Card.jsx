@@ -30,7 +30,7 @@ export function Card(props) {
       }
    }
    return (
-      <div className={styles.card}>
+      <div className={styles.card} >
          <div style={{display: "flex", justifyContent: "space-between", margin: "4%", height: "20%"}}
          >
          
